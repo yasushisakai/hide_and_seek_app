@@ -13,6 +13,7 @@
 		7737633F22209B63002FFA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7737633E22209B63002FFA64 /* Assets.xcassets */; };
 		7737634222209B63002FFA64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7737634022209B63002FFA64 /* LaunchScreen.storyboard */; };
 		7737634C22209DC0002FFA64 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7737634B22209DC0002FFA64 /* LocationManager.swift */; };
+		77AA2A23222244740048CA3D /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA2A22222244740048CA3D /* FileWriter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7737634122209B63002FFA64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7737634322209B63002FFA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7737634B22209DC0002FFA64 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		77AA2A22222244740048CA3D /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				7737634022209B63002FFA64 /* LaunchScreen.storyboard */,
 				7737634322209B63002FFA64 /* Info.plist */,
 				7737634B22209DC0002FFA64 /* LocationManager.swift */,
+				77AA2A22222244740048CA3D /* FileWriter.swift */,
 			);
 			path = HackBikeApp;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77AA2A23222244740048CA3D /* FileWriter.swift in Sources */,
 				7737633A22209B63002FFA64 /* ViewController.swift in Sources */,
 				7737633822209B63002FFA64 /* AppDelegate.swift in Sources */,
 				7737634C22209DC0002FFA64 /* LocationManager.swift in Sources */,

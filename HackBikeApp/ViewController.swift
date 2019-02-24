@@ -32,20 +32,12 @@ class ViewController: UIViewController, LocationPermissionDelegate, LocationDele
         
         // trying to write to a file
         
-//        var data = Data()
-//        data.append(0)
-//        data.append(10)
-//        data.append(20)
-//        data.append(30)
-//
-//        do {
-//            try data.write(to: URL(fileURLWithPath: "\(NSHomeDirectory())/test.txt"))
-//        } catch let error {
-//            print("error: \(error)")
-//            print(NSHomeDirectory())
-//
-//        }
-
+        let file = FileWriter(fileName: "test.csv")
+        do {
+            try file.writeLines(contents: ["data, data", "test, data"], to: .Documents)
+        } catch let error{
+            print("error: \(error.localizedDescription)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
