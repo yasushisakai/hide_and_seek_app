@@ -28,6 +28,11 @@ class FileWriter {
         self.fileName = fileName
     }
     
+    static func write(to fileName: String, contents: [String]) throws {
+        let file = FileWriter(fileName: fileName)
+        try file.writeLines(contents: contents, to: .Documents)
+    }
+    
     func getUrl(for directory: Directories) throws -> URL {
         switch directory{
         case .Documents:
@@ -57,11 +62,7 @@ class FileWriter {
     }
     
     func writeLines(contents: [String], to path: Directories) throws {
-        let concatLines = contents.reduce("", {
-            (prev: String, current:String) -> String in
-            return prev + current + "\n"
-            
-        })
+        let concatLines = contents.reduce("") { $0 + $1 + "\n" }
         return try write(contents: concatLines, to: path)
     }
 

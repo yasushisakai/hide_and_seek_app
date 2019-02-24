@@ -15,51 +15,22 @@ enum LocationError: Error {
     case unknown
 }
 
-protocol LocationPermissionDelegate: class{
+protocol LocationPermissionDelegate: class {
     func authGranted()
     func authFailed(with status: CLAuthorizationStatus)
 }
 
 protocol LocationDelegate: class {
-    func obtainedBreadCrumbs(_ breadcrumb: BreadCrumb)
+    func obtainedLocation(_ location: Location)
     func failedWithError(_ error: LocationError)
 }
 
-struct Trip{
-    var started: Date?
-    var breadCrumbs: [BreadCrumb]
-    
-    init(){
-        self.started = nil
-        self.breadCrumbs = []
-    }
-}
-
-struct BreadCrumb: CustomStringConvertible {
-
-    let latitude: Double
-    let longitude: Double
-    let timestamp: Date
-    
-    var description: String {
-        let epoch = Int(timestamp.timeIntervalSince1970)
-        return "\(epoch) @ lat: \(latitude), lng:\(longitude)"
-    }
-    
-    init(at location: CLLocation){
-        self.latitude = location.coordinate.latitude
-        self.longitude = location.coordinate.longitude
-        self.timestamp = location.timestamp
-    }
-}
-
+// TODO: separate generic LocationManaging function and Trip and Breadcrumbs
 class LocationManager: NSObject, CLLocationManagerDelegate {
     
     private let manager = CLLocationManager()
     
     var isUpdating: Bool
-    var trip: Trip
-    
     weak var permissionDelegate: LocationPermissionDelegate?
     weak var delegate: LocationDelegate?
     
@@ -70,7 +41,6 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         self.permissionDelegate = permissionDelegate
         self.delegate = locationDelegate
         self.isUpdating = false
-        self.trip = Trip()
         super.init()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
@@ -98,17 +68,13 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func requestLocation() {
         manager.requestLocation()
-        // manager.startUpdatingLocation()
     }
     
     func toggleUpdate(){
         if isUpdating {
             manager.stopUpdatingLocation()
-            // TODO: send or save the trip to a file
         } else {
             manager.startUpdatingLocation()
-            // starting a trip over
-            trip = Trip()
         }
         isUpdating = !isUpdating
     }
@@ -144,15 +110,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             delegate?.failedWithError(.cannotFindLocation)
             return
         }
-        
-        let breadCrumb = BreadCrumb(at: location)
-        
-        if trip.started == .none {
-                trip.started = breadCrumb.timestamp
-        }
-        trip.breadCrumbs.append(breadCrumb)
-        
-        delegate?.obtainedBreadCrumbs(breadCrumb)
+        delegate?.obtainedLocation(Location(at: location))
     }
 }
 
