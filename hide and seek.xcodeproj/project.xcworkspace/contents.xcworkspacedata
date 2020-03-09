@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HackBikeApp.xcodeproj">
+      location = "self:/Users/yasushi/Documents/code/hide_and_seek/hide and seek.xcodeproj">
    </FileRef>
 </Workspace>

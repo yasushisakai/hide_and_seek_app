@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7737633422209B63002FFA64 /* HackBikeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackBikeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7737633422209B63002FFA64 /* hide and seek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hide and seek.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7737633722209B63002FFA64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7737633922209B63002FFA64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7737633C22209B63002FFA64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		7737632B22209B63002FFA64 = {
 			isa = PBXGroup;
 			children = (
-				7737633622209B63002FFA64 /* HackBikeApp */,
+				7737633622209B63002FFA64 /* hide and seek */,
 				7737633522209B63002FFA64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		7737633522209B63002FFA64 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7737633422209B63002FFA64 /* HackBikeApp.app */,
+				7737633422209B63002FFA64 /* hide and seek.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7737633622209B63002FFA64 /* HackBikeApp */ = {
+		7737633622209B63002FFA64 /* hide and seek */ = {
 			isa = PBXGroup;
 			children = (
 				77AA2A2422226B5E0048CA3D /* Models */,
@@ -72,7 +72,7 @@
 				7737634B22209DC0002FFA64 /* LocationManager.swift */,
 				77AA2A22222244740048CA3D /* FileWriter.swift */,
 			);
-			path = HackBikeApp;
+			path = "hide and seek";
 			sourceTree = "<group>";
 		};
 		77AA2A2422226B5E0048CA3D /* Models */ = {
@@ -87,9 +87,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7737633322209B63002FFA64 /* HackBikeApp */ = {
+		7737633322209B63002FFA64 /* hide and seek */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7737634622209B63002FFA64 /* Build configuration list for PBXNativeTarget "HackBikeApp" */;
+			buildConfigurationList = 7737634622209B63002FFA64 /* Build configuration list for PBXNativeTarget "hide and seek" */;
 			buildPhases = (
 				7737633022209B63002FFA64 /* Sources */,
 				7737633122209B63002FFA64 /* Frameworks */,
@@ -99,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = HackBikeApp;
+			name = "hide and seek";
 			productName = HackBikeApp;
-			productReference = 7737633422209B63002FFA64 /* HackBikeApp.app */;
+			productReference = 7737633422209B63002FFA64 /* hide and seek.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7737632F22209B63002FFA64 /* Build configuration list for PBXProject "HackBikeApp" */;
+			buildConfigurationList = 7737632F22209B63002FFA64 /* Build configuration list for PBXProject "hide and seek" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7737633322209B63002FFA64 /* HackBikeApp */,
+				7737633322209B63002FFA64 /* hide and seek */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +305,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HackBikeApp/Info.plist;
+				DEVELOPMENT_TEAM = WBGGT8PD5V;
+				INFOPLIST_FILE = "hide and seek/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yasushisakai.HackBikeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yasushisakai.hide-and-seek";
+				PRODUCT_NAME = "hide and seek";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,13 +323,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = HackBikeApp/Info.plist;
+				DEVELOPMENT_TEAM = WBGGT8PD5V;
+				INFOPLIST_FILE = "hide and seek/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yasushisakai.HackBikeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yasushisakai.hide-and-seek";
+				PRODUCT_NAME = "hide and seek";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7737632F22209B63002FFA64 /* Build configuration list for PBXProject "HackBikeApp" */ = {
+		7737632F22209B63002FFA64 /* Build configuration list for PBXProject "hide and seek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7737634422209B63002FFA64 /* Debug */,
@@ -346,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7737634622209B63002FFA64 /* Build configuration list for PBXNativeTarget "HackBikeApp" */ = {
+		7737634622209B63002FFA64 /* Build configuration list for PBXNativeTarget "hide and seek" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7737634722209B63002FFA64 /* Debug */,

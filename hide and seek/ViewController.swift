@@ -80,5 +80,15 @@ class ViewController: UIViewController, LocationPermissionDelegate, LocationDele
         fatalError("Location Error: \(error)")
     }
     
+    
+    // MARK: Background Foreground toggle
+    func toBackground() {
+        locationManager.toBackground()
+    }
+    
+    func toForeground() {
+        locationManager.toForeground()
+    }
+    
 }
 
