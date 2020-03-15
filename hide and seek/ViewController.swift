@@ -73,6 +73,25 @@ class ViewController: UIViewController, LocationPermissionDelegate, LocationDele
     
     // MARK: - Location Delegate Function
     func obtainedLocation(_ location: Location) {
+        // send http request.
+        
+        print("got location \(location.latitude), \(location.longitude)")
+        
+        let baseurl = "http://blindspot.media.mit.edu"
+        let dID = UIDevice.current.identifierForVendor!.uuidString;
+        
+        let urlstring = "\(baseurl)/seek.php?lat=\(location.latitude)&lon=\(location.longitude)&deviceid=\(dID)"
+        
+        let url = URL(string: urlstring)!
+        
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            guard let data = data else { return }
+            print(String(data: data, encoding: .utf8)!)
+        }
+        
+        task.resume()
+        
         trip?.append(breadCrumb: location)
     }
     
