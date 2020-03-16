@@ -45,7 +45,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         manager.distanceFilter = kCLDistanceFilterNone
-        manager.showsBackgroundLocationIndicator = true
+        manager.showsBackgroundLocationIndicator = false
         manager.pausesLocationUpdatesAutomatically = false
     }
     
@@ -86,8 +86,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func toBackground() {
-        manager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-        manager.distanceFilter = 50
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.distanceFilter = kCLDistanceFilterNone
     }
     
     func toForeground() {
