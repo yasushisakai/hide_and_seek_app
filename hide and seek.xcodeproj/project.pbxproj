@@ -13,6 +13,8 @@
 		7737633F22209B63002FFA64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7737633E22209B63002FFA64 /* Assets.xcassets */; };
 		7737634222209B63002FFA64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7737634022209B63002FFA64 /* LaunchScreen.storyboard */; };
 		7737634C22209DC0002FFA64 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7737634B22209DC0002FFA64 /* LocationManager.swift */; };
+		7760021D241F11EB0003018F /* libhide_and_seek.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7760021C241F11D50003018F /* libhide_and_seek.a */; };
+		7760021F241F12620003018F /* HideAndSeekCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7760021E241F12620003018F /* HideAndSeekCore.swift */; };
 		77AA2A23222244740048CA3D /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA2A22222244740048CA3D /* FileWriter.swift */; };
 		77AA2A2622226B6D0048CA3D /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA2A2522226B6D0048CA3D /* Trip.swift */; };
 		77AA2A2822226B810048CA3D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA2A2722226B810048CA3D /* Location.swift */; };
@@ -27,6 +29,8 @@
 		7737634122209B63002FFA64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7737634322209B63002FFA64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7737634B22209DC0002FFA64 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		7760021C241F11D50003018F /* libhide_and_seek.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libhide_and_seek.a; path = libs/libhide_and_seek.a; sourceTree = "<group>"; };
+		7760021E241F12620003018F /* HideAndSeekCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekCore.swift; sourceTree = "<group>"; };
 		77AA2A22222244740048CA3D /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
 		77AA2A2522226B6D0048CA3D /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		77AA2A2722226B810048CA3D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7760021D241F11EB0003018F /* libhide_and_seek.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,7 @@
 			children = (
 				7737633622209B63002FFA64 /* hide and seek */,
 				7737633522209B63002FFA64 /* Products */,
+				7760021B241F11D50003018F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +77,17 @@
 				7737634322209B63002FFA64 /* Info.plist */,
 				7737634B22209DC0002FFA64 /* LocationManager.swift */,
 				77AA2A22222244740048CA3D /* FileWriter.swift */,
+				7760021E241F12620003018F /* HideAndSeekCore.swift */,
 			);
 			path = "hide and seek";
+			sourceTree = "<group>";
+		};
+		7760021B241F11D50003018F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7760021C241F11D50003018F /* libhide_and_seek.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		77AA2A2422226B5E0048CA3D /* Models */ = {
@@ -116,6 +131,7 @@
 				TargetAttributes = {
 					7737633322209B63002FFA64 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -160,6 +176,7 @@
 				7737633A22209B63002FFA64 /* ViewController.swift in Sources */,
 				7737633822209B63002FFA64 /* AppDelegate.swift in Sources */,
 				77AA2A2822226B810048CA3D /* Location.swift in Sources */,
+				7760021F241F12620003018F /* HideAndSeekCore.swift in Sources */,
 				7737634C22209DC0002FFA64 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,14 +323,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WBGGT8PD5V;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
 				INFOPLIST_FILE = "hide and seek/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yasushisakai.hide-and-seek";
 				PRODUCT_NAME = "hide and seek";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = include/hide_and_seek.h;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -324,14 +347,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WBGGT8PD5V;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
 				INFOPLIST_FILE = "hide and seek/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yasushisakai.hide-and-seek";
 				PRODUCT_NAME = "hide and seek";
-				SWIFT_VERSION = 4.0;
+				SWIFT_OBJC_BRIDGING_HEADER = include/hide_and_seek.h;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

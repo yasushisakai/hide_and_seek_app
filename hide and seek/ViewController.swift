@@ -26,6 +26,9 @@ class ViewController: UIViewController, LocationPermissionDelegate, LocationDele
         } catch let error {
             print("error: \(error)")
         }
+        
+        let hs = HideAndSeekCore()
+        hs.generateProof()
     }
 
     override func didReceiveMemoryWarning() {
